@@ -12,3 +12,4 @@ C:\Users\Robert\Documents\Visual Studio 2017\Projects\WindowsFormsApp1\WindowsFo
 C:\Users\Robert\Documents\Visual Studio 2017\Projects\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csprojResolveAssemblyReference.cache
 C:\Users\Robert\Documents\Visual Studio 2017\Projects\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.EditFile2.resources
 C:\Users\Robert\Documents\Visual Studio 2017\Projects\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.EditFile1.resources
+C:\Users\Robert\Documents\Visual Studio 2017\Projects\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.TextEditor.resources

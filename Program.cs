@@ -31,6 +31,9 @@ namespace WindowsFormsApp1
 
             // Lesson 3 Task 3
             //Application.Run(new EditFile1());
+
+            // Lesson 4 Task 1
+            //Application.Run(new TextEditor());
         }
 
         static void ShowResume()
