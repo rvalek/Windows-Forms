@@ -45,25 +45,61 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="EditFile1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="EditFile1.Designer.cs">
+      <DependentUpon>EditFile1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form2.cs">
+    <Compile Include="EditFile2.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form2.Designer.cs">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <Compile Include="EditFile2.Designer.cs">
+      <DependentUpon>EditFile2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProgressBar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProgressBar.Designer.cs">
+      <DependentUpon>ProgressBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Survey.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Survey.Designer.cs">
+      <DependentUpon>Survey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FileSearch1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FileSearch1.Designer.cs">
+      <DependentUpon>FileSearch1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FileSearch2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FileSearch2.Designer.cs">
+      <DependentUpon>FileSearch2.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="EditFile2.resx">
+      <DependentUpon>EditFile2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form2.resx">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <EmbeddedResource Include="FileSearch2.resx">
+      <DependentUpon>FileSearch2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditFile1.resx">
+      <DependentUpon>EditFile1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProgressBar.resx">
+      <DependentUpon>ProgressBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Survey.resx">
+      <DependentUpon>Survey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FileSearch1.resx">
+      <DependentUpon>FileSearch1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

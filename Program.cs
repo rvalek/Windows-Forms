@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WindowsFormsApp1
@@ -18,23 +15,25 @@ namespace WindowsFormsApp1
             Application.SetCompatibleTextRenderingDefault(false);
 
             // Lesson 1 Task 1
-            // showResume();
+            //ShowResume();
 
             // Lesson 1 Task 2
-            //DialogResult result;
-            //do
-            //{
-            //    result = guessNumber();
-            //} while (result == DialogResult.Retry);
+            //RunGuessNumber();
 
             // Lesson 2 Task 1
             //Application.Run(new ProgressBar());
 
             // Lesson 2 Task 2
             //Application.Run(new Survey());
+
+            // Lesson 3 Task 1
+            //Application.Run(new FileSearch1());
+
+            // Lesson 3 Task 3
+            //Application.Run(new EditFile1());
         }
 
-        static void showResume()
+        static void ShowResume()
         {
             String[] resume = {"Hi, my name's Robert.",
                 "Currently I'm working on my Windows Forms assignment.",
@@ -53,7 +52,16 @@ namespace WindowsFormsApp1
             }
         }
 
-        static DialogResult guessNumber()
+        static void RunGuessNumber()
+        {
+            DialogResult result;
+            do
+            {
+                result = GuessNumber();
+            } while (result == DialogResult.Retry);
+        }
+
+        static DialogResult GuessNumber()
         {
             String caption = "Guess My Number";
 
