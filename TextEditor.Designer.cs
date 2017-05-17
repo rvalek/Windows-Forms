@@ -108,7 +108,7 @@
             this.file_New.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.file_New.Name = "file_New";
             this.file_New.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.file_New.Size = new System.Drawing.Size(152, 22);
+            this.file_New.Size = new System.Drawing.Size(146, 22);
             this.file_New.Text = "New";
             this.file_New.Click += new System.EventHandler(this.file_New_Click);
             // 
@@ -117,40 +117,40 @@
             this.file_Open.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.file_Open.Name = "file_Open";
             this.file_Open.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.file_Open.Size = new System.Drawing.Size(152, 22);
+            this.file_Open.Size = new System.Drawing.Size(146, 22);
             this.file_Open.Text = "Open";
             this.file_Open.Click += new System.EventHandler(this.file_Open_Click);
             // 
             // toolStripSeparator11
             // 
             this.toolStripSeparator11.Name = "toolStripSeparator11";
-            this.toolStripSeparator11.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator11.Size = new System.Drawing.Size(143, 6);
             // 
             // file_Save
             // 
             this.file_Save.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.file_Save.Name = "file_Save";
             this.file_Save.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.file_Save.Size = new System.Drawing.Size(152, 22);
+            this.file_Save.Size = new System.Drawing.Size(146, 22);
             this.file_Save.Text = "Save";
             this.file_Save.Click += new System.EventHandler(this.file_Save_Click);
             // 
             // file_SaveAs
             // 
             this.file_SaveAs.Name = "file_SaveAs";
-            this.file_SaveAs.Size = new System.Drawing.Size(152, 22);
+            this.file_SaveAs.Size = new System.Drawing.Size(146, 22);
             this.file_SaveAs.Text = "Save As";
             this.file_SaveAs.Click += new System.EventHandler(this.file_SaveAs_Click);
             // 
             // toolStripSeparator13
             // 
             this.toolStripSeparator13.Name = "toolStripSeparator13";
-            this.toolStripSeparator13.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator13.Size = new System.Drawing.Size(143, 6);
             // 
             // file_Exit
             // 
             this.file_Exit.Name = "file_Exit";
-            this.file_Exit.Size = new System.Drawing.Size(152, 22);
+            this.file_Exit.Size = new System.Drawing.Size(146, 22);
             this.file_Exit.Text = "Exit";
             this.file_Exit.Click += new System.EventHandler(this.file_Exit_Click);
             // 
@@ -380,9 +380,11 @@
             this.Document.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Document.Location = new System.Drawing.Point(0, 49);
             this.Document.Name = "Document";
+            this.Document.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
             this.Document.Size = new System.Drawing.Size(732, 386);
             this.Document.TabIndex = 3;
-            this.Document.Text = "";
+            this.Document.Text = "You can also drag and drop a file here!";
+            this.Document.DragDrop += new System.Windows.Forms.DragEventHandler(this.Document_DragDrop);
             // 
             // rcMenu
             // 

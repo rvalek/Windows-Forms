@@ -14,26 +14,30 @@ namespace WindowsFormsApp1
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            // Lesson 1 Task 1
+            // Lesson 1 Task 1 (Short resume that shows average words per window)
             //ShowResume();
 
-            // Lesson 1 Task 2
+            // Lesson 1 Task 2 (Guessing game that shows number of tries)
             //RunGuessNumber();
 
-            // Lesson 2 Task 1
+            // Lesson 2 Task 1 (Progress bar for reading from file)
             //Application.Run(new ProgressBar());
 
-            // Lesson 2 Task 2
+            // Lesson 2 Task 2 (Survey with input summary)
             //Application.Run(new Survey());
 
-            // Lesson 3 Task 1
+            // Lesson 3 Task 1 (Search Files in selected folder by custom mask)
             //Application.Run(new FileSearch1());
 
-            // Lesson 3 Task 3
+            // Lesson 3 Task 3 (Open/Edit/Save File)
             //Application.Run(new EditFile1());
 
-            // Lesson 4 Task 1
+            // Lesson 4 Task 1 (Text Editor) + Lesson 5 Task 3 (Drag and Drop)
             //Application.Run(new TextEditor());
+
+            //Lesson 4 Task 1 (Directory Explorer) + Lesson 5 Task 1 (Also Directory Explorer with Tree View) 
+            // + Lesson Task 2 (List View with Options: Icons/Tiles/List/Table/Picture Preview)
+            Application.Run(new Explorer());
         }
 
         static void ShowResume()

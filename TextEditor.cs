@@ -12,6 +12,21 @@ namespace WindowsFormsApp1
 
         private void TextEditor_Load(object sender, EventArgs e)
         {
+            Document.AllowDrop = true;
+
+        }
+
+        //private void Document_DragEnter(object sender, DragEventArgs e)
+        //{
+        //    if (e.Data.GetDataPresent(DataFormats.FileDrop, false) == true)
+        //        e.Effect = DragDropEffects.All;
+        //}
+
+        private void Document_DragDrop(object sender, DragEventArgs e)
+        {
+            string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+            if (files != null && files.Length != 0)
+                LoadFile(files[0]);
         }
 
         private void file_New_Click(object sender, EventArgs e)
@@ -161,17 +176,20 @@ namespace WindowsFormsApp1
         void Open()
         {
             if (openWork.ShowDialog() == DialogResult.OK)
+                LoadFile(openWork.FileName);
+        }
+
+        void LoadFile(String fileName)
+        {
+            try
             {
-                try
-                {
-                    Document.LoadFile(openWork.FileName, RichTextBoxStreamType.RichText);
-                }
-                catch (ArgumentException e)
-                {
-                    Document.LoadFile(openWork.FileName, RichTextBoxStreamType.PlainText);
-                }
-                this.Text = openWork.FileName;
+                Document.LoadFile(fileName, RichTextBoxStreamType.RichText);
             }
+            catch (ArgumentException ex)
+            {
+                Document.LoadFile(fileName, RichTextBoxStreamType.PlainText);
+            }
+            this.Text = fileName;
         }
 
         void Save()
@@ -179,7 +197,7 @@ namespace WindowsFormsApp1
             try
             {
                 Document.SaveFile(openWork.FileName);
-            } catch(Exception e)
+            } catch(Exception ex)
             {
                 SaveAs();
             }
