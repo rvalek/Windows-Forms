@@ -57,6 +57,12 @@
     <Compile Include="EditFile2.Designer.cs">
       <DependentUpon>EditFile2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Explorer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Explorer.Designer.cs">
+      <DependentUpon>Explorer.cs</DependentUpon>
+    </Compile>
     <Compile Include="ProgressBar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,6 +103,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EditFile1.resx">
       <DependentUpon>EditFile1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Explorer.resx">
+      <DependentUpon>Explorer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProgressBar.resx">
       <DependentUpon>ProgressBar.cs</DependentUpon>
