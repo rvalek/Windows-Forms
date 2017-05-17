@@ -185,7 +185,7 @@ namespace WindowsFormsApp1
             {
                 Document.LoadFile(fileName, RichTextBoxStreamType.RichText);
             }
-            catch (ArgumentException ex)
+            catch
             {
                 Document.LoadFile(fileName, RichTextBoxStreamType.PlainText);
             }
@@ -197,7 +197,7 @@ namespace WindowsFormsApp1
             try
             {
                 Document.SaveFile(openWork.FileName);
-            } catch(Exception ex)
+            } catch
             {
                 SaveAs();
             }
