@@ -1,20 +1,14 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
     public partial class Explorer : Form
     {
-
         ArrayList Addresses = new ArrayList();
         int currentIndex = -1;
         string currentAddress = "";
@@ -22,6 +16,7 @@ namespace WindowsFormsApp1
         public Explorer()
         {
             InitializeComponent();
+            listView1.View = View.SmallIcon;
 
             string[] localDrives = Environment.GetLogicalDrives();
             int n = 0;
@@ -106,15 +101,17 @@ namespace WindowsFormsApp1
             UpdateNavButtons();
             toolStripTextBox1.Text = place;
 
+            UpdateListView(place);
+        }
+
+        private void UpdateListView(string place)
+        {
             try
             {
-                string[] dirs = Directory.GetDirectories(place);
-                string[] files = Directory.GetFiles(place);
-
                 listView1.Items.Clear();
 
-                FillListView(dirs, true);
-                FillListView(files, false);
+                FillListView(Directory.GetDirectories(place), true);
+                FillListView(Directory.GetFiles(place), false);
             }
             catch (UnauthorizedAccessException)
             {
@@ -122,22 +119,34 @@ namespace WindowsFormsApp1
             }
         }
 
-        private void FillListView(string[] contents, bool dirs)
+        private void FillListView(string[] filePaths, bool folders)
         {
             FileInfo fileInfo;
-            string name, s, type;
+            string name;
+            int imageCode = folders ? 0 : 1;
             ListViewItem lw;
 
-            type = dirs ? "Folder" : "File";
-
-            foreach (string item in contents)
+            foreach (string item in filePaths)
             {
                 fileInfo = new FileInfo(item);
                 name = item.Substring(item.LastIndexOf('\\') + 1);
-                s = dirs ? "" : s = fileInfo.Length.ToString() + " bytes";
-                string[] data = (listView1.View != View.Tile) ?
-                    new string[] { name, s, type, fileInfo.LastWriteTime.ToString() } : new string[] { name };
-                lw = new ListViewItem(data, 0);
+                string[] data = new string[] { name };
+
+                if (!folders)
+                {
+                    if (listView1.View == View.LargeIcon)
+                        if (name.Contains(".jpg") || name.Contains(".bmp") || name.Contains(".png") || name.Contains(".gif"))
+                        {
+                            this.imageList2.Images.Add(System.Drawing.Image.FromFile(fileInfo.FullName));
+                            imageCode = this.imageList2.Images.Count - 1;
+                        }
+                        else
+                        {
+                            imageCode = 1;
+                        }
+                }
+
+                lw = new ListViewItem(data, imageCode);
                 lw.Name = item;
                 listView1.Items.Add(lw);
             }
@@ -170,7 +179,7 @@ namespace WindowsFormsApp1
 
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
-            StepForward((string)Addresses[currentIndex+1]);
+            StepForward((string)Addresses[currentIndex + 1]);
         }
 
         private void toolStripButton3_Click(object sender, EventArgs e)
@@ -192,6 +201,33 @@ namespace WindowsFormsApp1
                     MessageBox.Show("No such directory.", "Error");
                 }
             }
+        }
+
+        private void switchViewMode(View selectedView)
+        {
+            iconsToolStripMenuItem.Checked = false;
+            tilesToolStripMenuItem.Checked = false;
+            imagePreviewToolStripMenuItem.Checked = false;
+            listView1.View = selectedView;
+        }
+
+        private void iconsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            switchViewMode(View.SmallIcon);
+            iconsToolStripMenuItem.Checked = true;
+        }
+
+        private void tilesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            switchViewMode(View.Tile);
+            tilesToolStripMenuItem.Checked = true;
+        }
+
+        private void imagePreviewToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            switchViewMode(View.LargeIcon);
+            UpdateInterface(@currentAddress);
+            imagePreviewToolStripMenuItem.Checked = true;
         }
     }
 }
