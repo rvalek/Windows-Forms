@@ -14,6 +14,8 @@ namespace WindowsFormsApp1
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
+            Application.Run(new AllExcersises());
+
             // Lesson 1 Task 1 (Short resume that shows average words per window)
             //ShowResume();
 
@@ -36,11 +38,11 @@ namespace WindowsFormsApp1
             //Application.Run(new TextEditor());
 
             //Lesson 4 Task 1 (Directory Explorer) + Lesson 5 Task 1 (Also Directory Explorer with Tree View) 
-            // + Lesson Task 2 (List View with Options: Icons/Tiles/List/Table/Picture Preview)
-            Application.Run(new Explorer());
+            // + Lesson Task 2 (List View with Options: Icons/Tiles/Image Preview)
+            //Application.Run(new Explorer());
         }
 
-        static void ShowResume()
+        public static void ShowResume()
         {
             String[] resume = {"Hi, my name's Robert.",
                 "Currently I'm working on my Windows Forms assignment.",
@@ -59,7 +61,7 @@ namespace WindowsFormsApp1
             }
         }
 
-        static void RunGuessNumber()
+        public static void RunGuessNumber()
         {
             DialogResult result;
             do

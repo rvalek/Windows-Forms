@@ -137,8 +137,12 @@ namespace WindowsFormsApp1
                     if (listView1.View == View.LargeIcon)
                         if (name.Contains(".jpg") || name.Contains(".bmp") || name.Contains(".png") || name.Contains(".gif"))
                         {
-                            this.imageList2.Images.Add(System.Drawing.Image.FromFile(fileInfo.FullName));
-                            imageCode = this.imageList2.Images.Count - 1;
+                            try
+                            {
+                                this.imageList2.Images.Add(System.Drawing.Image.FromFile(fileInfo.FullName));
+                                imageCode = this.imageList2.Images.Count - 1;
+                            }
+                            catch { }
                         }
                         else
                         {

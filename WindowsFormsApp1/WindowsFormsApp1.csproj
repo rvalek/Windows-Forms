@@ -45,6 +45,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AllExcersises.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllExcersises.Designer.cs">
+      <DependentUpon>AllExcersises.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditFile1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +101,9 @@
     <Compile Include="TextEditor.Designer.cs">
       <DependentUpon>TextEditor.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AllExcersises.resx">
+      <DependentUpon>AllExcersises.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EditFile2.resx">
       <DependentUpon>EditFile2.cs</DependentUpon>
     </EmbeddedResource>
